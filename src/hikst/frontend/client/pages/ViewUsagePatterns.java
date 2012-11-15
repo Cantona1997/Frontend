@@ -38,7 +38,7 @@ public class ViewUsagePatterns extends HikstComposite {
 	private void initTable()
 	{		
 		centerPanel.remove(flexyTable);
-		databaseService.getUsagePatterns(new ViewUsagePatternsCallback(flexyTable, (NewObject) hikstCompositeParent));
+		databaseService.getUsagePatterns(new ViewUsagePatternsCallback(flexyTable, this));
 		centerPanel.add(flexyTable);
 	}
 	

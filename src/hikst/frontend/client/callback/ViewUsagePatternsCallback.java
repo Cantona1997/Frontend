@@ -25,14 +25,14 @@ public class ViewUsagePatternsCallback implements
 		AsyncCallback<ArrayList<UsagePattern>> {
 
 	private FlexTable usagePatternTable;
-	private NewObject hikstCompositeParent;
+	private ViewUsagePatterns hikstCompositeParent;
 	private DatabaseServiceAsync databaseService = GWT
 			.create(DatabaseService.class);
 
 	public ViewUsagePatternsCallback(FlexTable usagePatternTable,
-			NewObject hikstCompositeParent2) {
+			ViewUsagePatterns hikstCompositeParent) {
 		this.usagePatternTable = usagePatternTable;
-		this.hikstCompositeParent = hikstCompositeParent2;
+		this.hikstCompositeParent = hikstCompositeParent;
 	}
 
 	@Override
@@ -61,7 +61,7 @@ public class ViewUsagePatternsCallback implements
 						@Override
 						public void onClick(ClickEvent event) {
 							NewObject panel = new NewObject(
-									(NewObject) hikstCompositeParent);
+									(NewObject) hikstCompositeParent.getHikstCompositeParent());
 							panel.setUsagePattern(usagePattern.getID());
 							RootLayoutPanel.get().add(panel);
 						}

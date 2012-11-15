@@ -177,59 +177,58 @@ public class NewObject extends HikstComposite {
 
 	public HikstObject getObject() {
 		o.name = name.getText();
-		// o.effect = effect.getValue();
 		try {
 			o.effect = Double.parseDouble(effect.getText());
 		} catch (NumberFormatException e) {
-			o.effect = Double.NaN;
+			o.effect = null;
 		}
 		try {
 			o.voltage = Double.parseDouble(voltage.getText());
 		} catch (NumberFormatException e) {
-			o.voltage = Double.NaN;
+			o.voltage = null;
 		}
 
 		try {
 			o.current = Double.parseDouble(current.getText());
 		} catch (NumberFormatException e) {
-			o.current = Double.NaN;
+			o.current = null;
 		}
 
 		try {
 			o.latitude = Double.parseDouble(latitude.getText());
 		} catch (NumberFormatException e) {
-			o.latitude = Double.NaN;
+			o.latitude = null;
 		}
 		try {
 			o.longitude = Double.parseDouble(longitude.getText());
 		} catch (NumberFormatException e) {
-			o.longitude = Double.NaN;
+			o.longitude = null;
 		}
 		try {
 			o.self_temperature = Double.parseDouble(self_temperature.getText());
 		} catch (NumberFormatException e) {
-			o.self_temperature = Double.NaN;
+			o.self_temperature = null;
 		}
 		try {
 			o.target_temperature = Double.parseDouble(target_temperature
 					.getText());
 		} catch (NumberFormatException e) {
-			o.target_temperature = Double.NaN;
+			o.target_temperature = null;
 		}
 		try {
 			o.base_area = Double.parseDouble(base_area.getText());
 		} catch (NumberFormatException e) {
-			o.base_area = Double.NaN;
+			o.base_area = null;
 		}
 		try {
 			o.base_height = Double.parseDouble(base_height.getText());
 		} catch (NumberFormatException e) {
-			o.base_height = Double.NaN;
+			o.base_height = null;
 		}
 		try {
 			o.heat_loss_rate = Double.parseDouble(heat_loss_rate.getText());
 		} catch (NumberFormatException e) {
-			o.heat_loss_rate = Double.NaN;
+			o.heat_loss_rate = null;
 		}
 
 		return o;
@@ -237,52 +236,52 @@ public class NewObject extends HikstComposite {
 
 	private void setValues() {
 		name.setValue(o.name);
-		if (o.effect.equals(Double.NaN)) {
+		if (o.effect.equals(null)) {
 			effect.setValue("");
 		} else {
 			effect.setValue(o.effect.toString());
 		}
-		if (o.voltage.equals(Double.NaN)) {
+		if (o.voltage.equals(null)) {
 			voltage.setValue("");
 		} else {
 			voltage.setValue(o.voltage.toString());
 		}
-		if (o.current.equals(Double.NaN)) {
+		if (o.current.equals(null)) {
 			current.setValue("");
 		} else {
 			current.setValue(o.current.toString());
 		}
-		if (o.latitude.equals(Double.NaN)) {
+		if (o.latitude.equals(null)) {
 			latitude.setValue("");
 		} else {
 			latitude.setValue(o.latitude.toString());
 		}
-		if (o.longitude.equals(Double.NaN)) {
+		if (o.longitude.equals(null)) {
 			longitude.setValue("");
 		} else {
 			longitude.setValue(o.longitude.toString());
 		}
-		if (o.self_temperature.equals(Double.NaN)) {
+		if (o.self_temperature.equals(null)) {
 			self_temperature.setValue("");
 		} else {
 			self_temperature.setValue(o.self_temperature.toString());
 		}
-		if (o.target_temperature.equals(Double.NaN)) {
+		if (o.target_temperature.equals(null)) {
 			target_temperature.setValue("");
 		} else {
 			target_temperature.setValue(o.self_temperature.toString());
 		}
-		if (o.base_area.equals(Double.NaN)) {
+		if (o.base_area.equals(null)) {
 			base_area.setValue("");
 		} else {
 			base_area.setValue(o.base_area.toString());
 		}
-		if (o.base_height.equals(Double.NaN)) {
+		if (o.base_height.equals(null)) {
 			base_height.setValue("");
 		} else {
 			base_height.setValue(o.base_height.toString());
 		}
-		if (o.heat_loss_rate.equals(Double.NaN)) {
+		if (o.heat_loss_rate.equals(null)) {
 			heat_loss_rate.setValue("");
 		} else {
 			heat_loss_rate.setValue(o.heat_loss_rate.toString());
@@ -390,7 +389,6 @@ public class NewObject extends HikstComposite {
 			Window.alert("Change Name!");
 		} else {
 			getObject();
-			o.effect.isNaN();
 			databaseService.saveObject(o,
 					new SaveObjectCallback(o));
 			onBackClick(event);
