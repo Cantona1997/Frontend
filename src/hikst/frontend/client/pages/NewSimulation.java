@@ -44,8 +44,6 @@ public class NewSimulation extends HikstComposite {
 	@UiField
 	DateBox toDate;
 	@UiField
-	TextBox intervall;
-	@UiField
 	FlowPanel eastPanel;
 	@UiField
 	FlowPanel centerPanel;
@@ -99,7 +97,7 @@ public class NewSimulation extends HikstComposite {
 		this();
 		fromDate.setValue((hikstCompositeParent).fromDate.getValue());
 		toDate.setValue((hikstCompositeParent).toDate.getValue());
-		intervall.setValue((hikstCompositeParent).intervall.getValue());
+		range.setValue((hikstCompositeParent).range.getValue());
 		
 	}
 	
@@ -182,7 +180,7 @@ public class NewSimulation extends HikstComposite {
 
 	@UiHandler("save")
 	void onButtonClick(ClickEvent event) {
-		databaseService.requestSimulation(new SimulationRequest(simObject.getID(),Long.parseLong(intervall.getValue()),fromDate.getValue().getTime(),toDate.getValue().getTime()), new SimulationRequestCallback());
+		databaseService.requestSimulation(new SimulationRequest(simObject.getID(),Long.parseLong(range.getValue()),fromDate.getValue().getTime(),toDate.getValue().getTime()), new SimulationRequestCallback());
 }
 
 

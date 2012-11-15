@@ -34,7 +34,6 @@
          	<p1:DateBox ui:field="fromDate"/>
          	<g:Label text="Til Dato:"/>
          	<p1:DateBox ui:field="toDate"/>
-         	<g:TextBox text="Intervall" ui:field="intervall" width="140px"/>
          	<g:Button width="140px" ui:field="save" height="34px">Lagre simulering</g:Button>
          	<g:Button width="140px" ui:field="back">Tilbake</g:Button>
          </g:FlowPanel>
