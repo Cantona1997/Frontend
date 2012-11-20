@@ -9,9 +9,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import com.google.gwt.user.client.Window;
+
 public class Settings {
 	private static Properties configFile = new Properties();;
-	private final static String FILENAME = "\\var\\lib\\tomcat6\\webapps\\SimEnergy\\frontend.properties";
+	private final static String FILENAME = "\\var\\lib\\tomcat6\\webapps\\SimulationEnergy\\frontend.properties";
 	private static File file = new File(FILENAME);
 	private static String db_hostname, db_port, db_db, db_user, db_pw;
 	private static Connection dbc;
@@ -83,15 +85,17 @@ public class Settings {
 
 	private void load() throws SettingsDotPrefNotFoundException {
 		try {
-			configFile.load(new FileReader(file));
+			//configFile.load(new FileReader(file));
 
-			db_hostname = configFile.getProperty("DB_HOSTNAME");
-			db_port = configFile.getProperty("DB_PORT");
-			db_db = configFile.getProperty("DB_DB");
-			db_user = configFile.getProperty("DB_USER");
-			db_pw = configFile.getProperty("DB_PW");
-		} catch (IOException e) {
+			db_hostname = "localhost";/*configFile.getProperty("DB_HOSTNAME");*/ 
+			db_port = "5432";/*configFile.getProperty("DB_PORT");*/
+			db_db = "db";/*configFile.getProperty("DB_DB");*/
+			db_user = "sysut";/*configFile.getProperty("DB_USER");*/
+			db_pw = "password";/*configFile.getProperty("DB_PW");*/
+		} catch (Exception e) {
+			Window.alert("Databasen er ute av drift");
 			throw new SettingsDotPrefNotFoundException();
+			
 		}
 	}
 
