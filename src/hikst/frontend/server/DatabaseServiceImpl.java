@@ -13,6 +13,7 @@ import java.sql.SQLInput;
 import java.sql.SQLPermission;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import sun.misc.BASE64Decoder;
@@ -161,6 +162,35 @@ public class DatabaseServiceImpl extends RemoteServiceServlet implements
 		}
 
 		return simulations;
+	}
+	
+	@Override
+	public HashMap<String, HashMap<Integer, String>> getObjectImpact(ArrayList<Integer> childObjects, ArrayList<ImpactDegree> impactDegrees) {
+		
+		HashMap<String, HashMap<Integer, String>> output = new HashMap<String, HashMap<Integer, String>>();
+		
+		HashMap<Integer, String> submap = new HashMap<Integer, String>();
+		
+		for(int id : childObjects){
+			submap.put(id, getObject(id).name);
+		}
+		
+		output.put("childObjList", submap);
+		
+		submap = new HashMap<Integer, String>();
+		
+		ArrayList<ImpactType> types = getImpactTypes();
+		
+		for (ImpactDegree id : impactDegrees) {
+			for (ImpactType t : types) {
+				if (t.ID == id.type_id)
+					submap.put(id.getId(), t.name);
+			}
+		}
+		
+		output.put("impactDegList", submap);
+
+		return output;
 	}
 
 	@Override
