@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import hikst.frontend.client.DatabaseService;
 import hikst.frontend.client.DatabaseServiceAsync;
+import hikst.frontend.client.callback.ObjectImpactCallback;
 import hikst.frontend.client.callback.SaveObjectCallback;
 import hikst.frontend.shared.HikstObject;
 import hikst.frontend.shared.ImpactDegree;
@@ -101,8 +102,8 @@ public class NewObject extends HikstComposite {
 	Label baseheightLabel;
 	@UiField
 	Label heatlossLabel;
-	@UiField VerticalPanel childObjList;
-	@UiField VerticalPanel impactDegList;
+	public @UiField VerticalPanel childObjList;
+	public @UiField VerticalPanel impactDegList;
 
 	MapWidget map;
 
@@ -291,6 +292,8 @@ public class NewObject extends HikstComposite {
 		impactDegList.clear();
 		childObjList.add(new Label("Barneobjekter"));
 		impactDegList.add(new Label("Pavirkningsfaktorer"));
+		
+//		databaseService.getObjectImpact(o.sons, o.impactDegrees, new ObjectImpactCallback(this));
 		
 		for(int childObject : o.sons){
 			childObjList.add(new Label(Integer.toString(childObject)));

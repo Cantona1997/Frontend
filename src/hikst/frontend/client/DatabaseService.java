@@ -1,5 +1,6 @@
 package hikst.frontend.client;
 
+import hikst.frontend.client.callback.ObjectImpactCallback;
 import hikst.frontend.shared.Description;
 import hikst.frontend.shared.HikstObject;
 import hikst.frontend.shared.HikstObjectTree;
@@ -15,6 +16,7 @@ import hikst.frontend.shared.ViewSimulationObject;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import com.google.gwt.user.client.rpc.RemoteService;
@@ -53,4 +55,7 @@ public interface DatabaseService extends RemoteService
 	public ArrayList<ViewSimulationObject> getViewSimulationObjects();
 	public void saveUsagePattern(UsagePattern usagePattern);
 	public ArrayList<UsagePattern> getUsagePatterns();
+	HashMap<String, HashMap<Integer, String>> getObjectImpact(
+			ArrayList<Integer> childObjects,
+			ArrayList<ImpactDegree> impactDegrees);
 }

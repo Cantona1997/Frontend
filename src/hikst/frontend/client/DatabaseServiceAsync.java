@@ -1,5 +1,6 @@
 package hikst.frontend.client;
 
+import hikst.frontend.client.callback.ObjectImpactCallback;
 import hikst.frontend.shared.Description;
 import hikst.frontend.shared.HikstObject;
 import hikst.frontend.shared.HikstObjectTree;
@@ -14,6 +15,7 @@ import hikst.frontend.shared.UsagePattern;
 import hikst.frontend.shared.ViewSimulationObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -66,4 +68,7 @@ public interface DatabaseServiceAsync {
 	void saveUsagePattern(UsagePattern usagePattern,
 			AsyncCallback<Void> callback);
 	void getUsagePatterns(AsyncCallback<ArrayList<UsagePattern>> callback);
+	void getObjectImpact(ArrayList<Integer> childObjects,
+			ArrayList<ImpactDegree> impactDegrees,
+			AsyncCallback<HashMap<String, HashMap<Integer, String>>> objectImpactCallback);
 }
