@@ -11,7 +11,7 @@ import java.util.Properties;
 
 public class Settings {
 	private static Properties configFile = new Properties();;
-	private final static String FILENAME = "frontend.properties";
+	private final static String FILENAME = "\\var\\lib\\tomcat6\\webapps\\SimEnergy\\frontend.properties";
 	private static File file = new File(FILENAME);
 	private static String db_hostname, db_port, db_db, db_user, db_pw;
 	private static Connection dbc;
@@ -39,7 +39,36 @@ public class Settings {
 		return false;
 
 	}
-
+	
+/*
+	private static String searchFolder(String folder, String fileName)
+	{
+		String fullPath = "";
+		File dir = new File(folder);
+		if (dir.isDirectory())
+			{
+			String[] children = dir.list();
+			if (children != null) {
+			for (int i=0; i<children.length; i++) {
+			// Get filename of file or directory
+			if (children[i].toLowerCase().indexOf(fileName.toLowerCase()) >= 0) {
+				fullPath = folder + "/" + fileName;
+				return fullPath;
+			}
+			else if (children[i].indexOf("..") < 0) {
+				String subSearch = searchFolder(folder + "/" + children[i], fileName);	
+				if (subSearch.toLowerCase().indexOf(fileName.toLowerCase()) >= 0) {
+					return subSearch;
+				}
+				}
+			}
+			
+			}
+			return "File not found!";
+		}
+		return fullPath;
+	}
+*/
 	public static boolean loadable() {
 		// Hvis instanset ikke eksisterer må vi opprette det
 		if (instance == null) {
