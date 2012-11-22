@@ -46,6 +46,7 @@ public class EmailAdmin extends Composite implements HasText {
 	@UiField TextBox mailMes;
 	@UiField Button mailSend;
 	@UiField TextBox mailFromPass;
+	@UiField Button backButton;
 
 	public EmailAdmin(String firstName) {
 		initWidget(uiBinder.createAndBindUi(this));
@@ -91,6 +92,11 @@ public class EmailAdmin extends Composite implements HasText {
         svc.sendMail(mailFrom.getText(), mailFromPass.getText() , mailTo.getText(),  mailSub.getText(), mailMes.getText(), callback);
 	}
 	
+	@UiHandler("backButton")
+	void onBackButton(ClickEvent e){
+		RootLayoutPanel.get().add(new MainPage());
+	}
+	
 	AsyncCallback callback = new AsyncCallback()
 	{
 	    public void onFailure(Throwable caught)
@@ -101,8 +107,8 @@ public class EmailAdmin extends Composite implements HasText {
 	    public void onSuccess(Object result)
 	    {
 	        Window.alert("success!");
-	        mainPage = new MainPage();
-			RootLayoutPanel.get().add(mainPage);
+	        //mainPage = new MainPage();
+			RootLayoutPanel.get().add(new MainPage());
 	    }
 	    
 	    

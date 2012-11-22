@@ -21,6 +21,7 @@
      <g:DockLayoutPanel unit='EM'>
        <g:north size='5'>
          <g:FlowPanel styleName="{style.northPanel}">
+         	<g:Button ui:field="backButton">Tilbake</g:Button>
 
          </g:FlowPanel>
        </g:north>

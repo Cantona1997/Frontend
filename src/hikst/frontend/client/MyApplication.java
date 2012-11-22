@@ -19,7 +19,7 @@ public class MyApplication implements EntryPoint
         // define the service you want to call
         MyServiceAsync svc = (MyServiceAsync) GWT.create(MyService.class);
         ServiceDefTarget endpoint = (ServiceDefTarget) svc;
-        endpoint.setServiceEntryPoint("/myService");
+        endpoint.setServiceEntryPoint("/frontend/myService");
   
         // define a handler for what to do when the
         // service returns a result
