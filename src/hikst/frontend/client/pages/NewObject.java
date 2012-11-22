@@ -237,52 +237,52 @@ public class NewObject extends HikstComposite {
 
 	private void setValues() {
 		name.setValue(o.name);
-		if (o.effect.equals(null)) {
+		if (o.effect == (null)) {
 			effect.setValue("");
 		} else {
 			effect.setValue(o.effect.toString());
 		}
-		if (o.voltage.equals(null)) {
+		if (o.voltage == (null)) {
 			voltage.setValue("");
 		} else {
 			voltage.setValue(o.voltage.toString());
 		}
-		if (o.current.equals(null)) {
+		if (o.current == (null)) {
 			current.setValue("");
 		} else {
 			current.setValue(o.current.toString());
 		}
-		if (o.latitude.equals(null)) {
+		if (o.latitude == (null)) {
 			latitude.setValue("");
 		} else {
 			latitude.setValue(o.latitude.toString());
 		}
-		if (o.longitude.equals(null)) {
+		if (o.longitude == (null)) {
 			longitude.setValue("");
 		} else {
 			longitude.setValue(o.longitude.toString());
 		}
-		if (o.self_temperature.equals(null)) {
+		if (o.self_temperature == (null)) {
 			self_temperature.setValue("");
 		} else {
 			self_temperature.setValue(o.self_temperature.toString());
 		}
-		if (o.target_temperature.equals(null)) {
+		if (o.target_temperature == (null)) {
 			target_temperature.setValue("");
 		} else {
 			target_temperature.setValue(o.self_temperature.toString());
 		}
-		if (o.base_area.equals(null)) {
+		if (o.base_area == (null)) {
 			base_area.setValue("");
 		} else {
 			base_area.setValue(o.base_area.toString());
 		}
-		if (o.base_height.equals(null)) {
+		if (o.base_height == (null)) {
 			base_height.setValue("");
 		} else {
 			base_height.setValue(o.base_height.toString());
 		}
-		if (o.heat_loss_rate.equals(null)) {
+		if (o.heat_loss_rate == (null)) {
 			heat_loss_rate.setValue("");
 		} else {
 			heat_loss_rate.setValue(o.heat_loss_rate.toString());
