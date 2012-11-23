@@ -13,7 +13,7 @@ import com.google.gwt.user.client.Window;
 
 public class Settings {
 	private static Properties configFile = new Properties();;
-	private final static String FILENAME = "\\var\\lib\\tomcat6\\webapps\\SimulationEnergy\\frontend.properties";
+	private final static String FILENAME = "frontend.properties";
 	private static File file = new File(FILENAME);
 	private static String db_hostname, db_port, db_db, db_user, db_pw;
 	private static Connection dbc;

@@ -63,6 +63,13 @@ public class SimulatonResult extends Composite {
 	@UiField
 	Button backButton;
 	private AsyncCallback<Integer> callback ;
+	
+	
+	@UiHandler("backButton")
+	void onBackClick(ClickEvent event) {
+		panelBack = new MainPage();
+		RootLayoutPanel.get().add(panelBack);
+	}
 
 }
 

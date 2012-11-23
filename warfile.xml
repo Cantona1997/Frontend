@@ -4,7 +4,7 @@
     <target name="buildwar">
         <war
         basedir="war"
-        destfile="SimulationEnergy2.war"
+        destfile="EnergySimulation.war"
         webxml="war/WEB-INF/web.xml">
             <exclude name="WEB-INF/**" />
             <webinf dir="war/WEB-INF/">
@@ -14,7 +14,7 @@
         </target>
         <target name="deploy">
             <copy
-            file="SimulationEnergy2.war"
+            file="EnergySimulation.war"
         todir="." />
     </target>
 </project>
